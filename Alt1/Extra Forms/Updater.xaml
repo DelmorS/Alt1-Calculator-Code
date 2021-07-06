@@ -1,0 +1,43 @@
+﻿<Window x:Class="Updater"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Installer" Topmost="True" Height="225" Width="526.6" WindowStyle="None"  AllowsTransparency="True" ShowInTaskbar="false" Initialized="Window_Initialized"  BorderThickness="3" BorderBrush="#007fcf">
+    <Window.Resources>
+        <Storyboard x:Key="FormFadeOut" Name="LabelFade2">
+            <DoubleAnimation Name="LabelFadeAnimation2"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="1.0" To="0.0" Duration="0:0:1"
+                                     AutoReverse="False" RepeatBehavior="1x" />
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Name="FormFade">
+                    <DoubleAnimation Name="FormFadeAnimation"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="0.0" To="1.0" Duration="0:0:1"
+                                     AutoReverse="False" RepeatBehavior="1x" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+
+
+        <StackPanel Orientation="Vertical">
+
+            <Label  FontSize="30" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,15,0,5">You've been updated to Alt1 v1.0.4</Label>
+
+            <TextBlock FontSize="22" Name="Label1" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Margin="25,10,25,5" TextWrapping="WrapWithOverflow">This update will be applied on restart and includes:</TextBlock>
+            <TextBlock FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="25,0,25,0" TextWrapping="WrapWithOverflow">-various bug fixes</TextBlock>
+            <TextBlock FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="25,0,25,0" TextWrapping="WrapWithOverflow">-nothing too exciting</TextBlock>
+            <Button Click="Button_Click" Content="Close" HorizontalAlignment="right" Width="70" Margin="0,15,25,0" FontSize="14" Background="#81b9f8"/>
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>

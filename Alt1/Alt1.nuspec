@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Alt1</id>
+        <version>0.0.0.0</version>
+        <authors>Wally Cloud</authors>
+        <iconUrl>http://healthfairy.com.au/Alt1/Alt1.ico</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Alt1 - Calculator</description>
+        <summary>Alt1 - Calculator</summary>
+    </metadata>
+    <files>
+        <file src="*.*" target="lib\net45\" exclude="*.pdb;*.nupkg;*.vshost.*"/>
+    </files>
+</package>

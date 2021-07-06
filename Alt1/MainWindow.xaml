@@ -1,0 +1,258 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:tb="http://www.hardcodet.net/taskbar" 
+    Title="MainWindow" PreviewKeyDown="Window_PreviewKeyDown" Closing="Window_Closing" SizeChanged="Window_SizeChanged"  Height="233" Width="390" MinHeight="100" WindowStyle="None" Loaded="Window_Loaded" MinWidth="390" ShowInTaskbar="False" Topmost="True" Initialized="Window_Initialized">
+
+    
+    
+    <Window.Resources>
+        <Style x:Key="Input_n" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="CaretBrush" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <EventSetter Event="PreviewKeyDown" Handler="TextBox_PreviewKeyDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+            <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
+            <EventSetter Event="GotFocus" Handler="InitialTextBox_GotFocus"/>
+        </Style>
+
+        <Style x:Key="Input_s" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <EventSetter Event="PreviewKeyDown" Handler="TextBox_PreviewKeyDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+            <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
+            <EventSetter Event="GotFocus" Handler="InitialTextBox_GotFocus"/>
+        </Style>
+
+        <Style x:Key="txtPower" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="-2,0,-2,0"/>
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+            <EventSetter Event="PreviewKeyDown" Handler="TextBox_PreviewKeyDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+            <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
+            <EventSetter Event="GotFocus" Handler="InitialTextBox_GotFocus"/>
+        </Style>
+
+        <Style x:Key="bdrPower" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="Height" Value="15"/>
+        </Style>
+
+        <Style x:Key="Stack1" TargetType="{x:Type StackPanel}">
+            <Setter Property="Orientation"  Value="Horizontal"/>
+            <Setter Property="MinWidth"  Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="radBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Padding" Value="-5,0,0,0"/>
+            <EventSetter Event="PreviewKeyDown" Handler="TextBox_PreviewKeyDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+            <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
+            <EventSetter Event="GotFocus" Handler="InitialTextBox_GotFocus"/>
+        </Style>
+
+        <Style x:Key="valBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Padding" Value="-5,0,0,0"/>
+            <EventSetter Event="PreviewKeyDown" Handler="TextBox_PreviewKeyDown"/>
+            <EventSetter Event="PreviewKeyUp" Handler="TextBox_PreviewKeyUp"/>
+            <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
+            <EventSetter Event="GotFocus" Handler="InitialTextBox_GotFocus"/>
+        </Style>
+
+        <Style x:Key="comBorder" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness"  Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Height" Value="1.5"/>
+            <Setter Property="Margin" Value="-2,10,0,0"/>
+
+        </Style>
+
+        <Style x:Key="LVILeft" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Background" Value="#f6f6f6"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0.3"/>
+        </Style>
+
+        <Style x:Key="LVIRight" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Background" Value="#cbe8f6"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="0.3"/>
+        </Style>
+
+    </Window.Resources>
+
+
+
+    <Grid>
+
+        <DockPanel>
+
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel DockPanel.Dock="Top" Grid.Row="1">
+                    <StackPanel Background="#2b2b2b">
+
+                        <Border Height="2" Width="auto" Margin="10,0,10,0" BorderThickness="1" BorderBrush="#d6d6d6"/>
+                        <Grid Margin="10,10,10,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="DarkGray" BorderThickness="0.5">
+                                    <DockPanel Background="Transparent" Name="InputStk" MouseDown="InputStk_MouseDown" Width="Auto" Grid.Column="0" VerticalAlignment="Center" LastChildFill="True">
+                                    <TextBox Foreground="White" Name="InitialTextBox" Style="{StaticResource Input_n}" Padding="0,1.5,0,1.5" CaretBrush="White">
+
+                                        </TextBox>
+                                    </DockPanel>
+
+                            </Border>
+
+
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <Button Width="30" Height="17" Margin="10,0,0,1.5" Background="#c42d2d" Click="Button_Click">
+
+                                    <Path Margin="1"
+                                      Stroke="white"
+                                      StrokeThickness="2"
+                                      Stretch="uniform"
+                                      >
+                                        <Path.Data>
+                                            <PathGeometry>
+                                                <PathFigureCollection>
+                                                    <PathFigure StartPoint="0,0">
+                                                        <LineSegment Point="25,25"/>
+                                                    </PathFigure>
+                                                    <PathFigure StartPoint="0,25">
+                                                        <LineSegment Point="25,0"></LineSegment>
+                                                    </PathFigure>
+                                                </PathFigureCollection>
+                                            </PathGeometry>
+                                        </Path.Data>
+                                    </Path>
+
+                                </Button>
+
+                                <Button Click="Button_Click_1" Content="CLR" FontSize="10" FontWeight="SemiBold" Foreground="White" Grid.Row="1" Width="30" Height="17" Margin="10,0,0,-0.4" Background="#50a6ff" VerticalAlignment="Bottom">
+
+                                </Button>
+                            </Grid>
+
+
+                        </Grid>
+                        <!--<Border Grid.Column="1" BorderBrush="LightBlue" BorderThickness="1.5" Margin="10,0,10,0">-->
+                        <!--
+
+                        </Border>-->
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label VerticalAlignment="Center" Foreground="White" FontSize="30" Margin="15,-15,0,2">=</Label>
+
+                            <Label Name="LBOutput" Margin="0,-15,3,0" Foreground="White" Grid.Column="1" VerticalAlignment="Center" FontSize="25"/>
+                            <Image Cursor="SizeAll" Grid.Column="2" Margin="0,-2,10,5" Source="Resources/Application_Logo.png" MouseDown="Label_MouseDown"/>
+                            <!--<Label Grid.Column="2" FontSize="30" Foreground="#aaaaaa" Margin="0,-5,0,0" MouseDown="Label_MouseDown" MouseUp="Label_MouseUp">Alt</Label>
+                            <Label Grid.Column="3" FontSize="30" Foreground="#7799ff" Margin="-10,-5,0,0" MouseDown="Label_MouseDown" MouseUp="Label_MouseUp">1</Label>-->
+                        </Grid>
+
+                    </StackPanel>
+
+
+
+                    <Border>
+
+                    </Border>
+
+                </StackPanel>
+
+                <Border Grid.Row="0" Background="#2b2b2b"/>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView BorderThickness="0.3" VerticalAlignment="Bottom" Background="#f6f6f6" Name="LVLeft" Foreground="gray"  FontSize="17" Grid.Column="0" Width="225" Margin="10,10,0,10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="false" PreviewMouseDown="LVLeft_PreviewMouseDown">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="copy" Click="MenuItem_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <!--<ListViewItem Background="#f6f6f6" BorderBrush="black" BorderThickness="0.3">
+                            <TextBlock>65.3333333</TextBlock>
+                        </ListViewItem>
+                        <ListViewItem Background="#f6f6f6" BorderBrush="black" BorderThickness="0.3">
+                            <TextBlock>4</TextBlock>
+                        </ListViewItem>
+                        <ListViewItem Background="#f6f6f6" BorderBrush="black" BorderThickness="0.3">
+                            <TextBlock>56.234</TextBlock>
+                        </ListViewItem>
+                        <ListViewItem Background="#f6f6f6" BorderBrush="black" BorderThickness="0.3">
+                            <TextBlock>0.00002</TextBlock>
+                        </ListViewItem>
+                        <ListViewItem Background="#f6f6f6" BorderBrush="black" BorderThickness="0.3">
+                            <TextBlock>502</TextBlock>
+                        </ListViewItem>-->
+                    </ListView>
+                    <ListView VerticalAlignment="Bottom" Background="#f6f6f6" Name="LVRight" Foreground="gray" BorderThickness="0.3" FontSize="17" Grid.Column="1" Margin="0,10,10,10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="false" PreviewMouseDown="LVLeft_PreviewMouseDown">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="copy" Click="MenuItem_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+
+                </Grid>
+
+
+            </Grid>
+
+        </DockPanel>
+
+
+    </Grid>
+
+
+</Window>

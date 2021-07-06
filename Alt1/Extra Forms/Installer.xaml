@@ -1,0 +1,41 @@
+﻿<Window x:Class="Installer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Installer" Initialized="Window_Initialized" Topmost="true" Height="241.8" Width="525" WindowStyle="None"  AllowsTransparency="True" BorderThickness="3" BorderBrush="#007fcf" ShowInTaskbar="false">
+    <Window.Resources>
+        <Storyboard x:Key="FormFadeOut" Name="LabelFade2">
+            <DoubleAnimation Name="LabelFadeAnimation2"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="1.0" To="0.0" Duration="0:0:1"
+                                     AutoReverse="False" RepeatBehavior="1x" />
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Name="FormFade">
+                    <DoubleAnimation Name="FormFadeAnimation"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="0.0" To="1.0" Duration="0:0:1"
+                                     AutoReverse="False" RepeatBehavior="1x" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+
+
+        <StackPanel Orientation="Vertical">
+
+            <Label  FontSize="48" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,15,0,5">Welcome to Alt1</Label>
+
+            <Label FontSize="30" Name="Label1" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,25">We're installing your new calculator</Label>
+            <ProgressBar Name="pbar" Height="30" Margin="25,0,25,0" Value="0"/>
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>

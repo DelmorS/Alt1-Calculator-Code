@@ -1,0 +1,105 @@
+﻿<Window x:Class="Introduction"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Introduction" Height="369" Width="650" WindowStyle="None" Initialized="Window_Initialized" ShowInTaskbar="False"  AllowsTransparency="True" BorderThickness="3" BorderBrush="#007fcf">
+    
+    
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Name="FormFade">
+                    <DoubleAnimation Name="FormFadeAnimation"
+                                     Storyboard.TargetProperty="(Window.Opacity)"
+                                     From="0.0" To="1.0" Duration="0:0:1"
+                                     AutoReverse="False" RepeatBehavior="1x" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+        
+        <StackPanel Name="StkMovement" Orientation="Horizontal" Margin="0,0,0,0" Grid.Row="0">
+        <StackPanel Width="650" Orientation="Vertical" >
+            <Label  FontSize="35" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,10,0,5" >Introduction</Label>
+
+            <Label Panel.ZIndex="1" FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,5" Content="Your new calculator lives in the taskbar.  It is never closed, only hidden."></Label>
+
+            <Image Source="../Resources/Alt1_IntroLocation.png" Width="410" Margin="0,0,0,0"/>
+
+            <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,0">Press the key combination [Alt + 1] or click the icon to show it.</Label>
+                    
+
+
+                </StackPanel>
+            <StackPanel Width="650" Orientation="Vertical" >
+                <Label  FontSize="35" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,10,0,5" >Key Input</Label>
+
+                <Label Panel.ZIndex="1" FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,5" Content="You can use your numpad or other keys to write your equations."></Label>
+
+                    <Image Source="../Resources/Alt1_IntroInput.png" Width="369" Margin="0,0,0,0"/>
+
+                <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,0">Valid equations are evaluated in real time.</Label>
+                    <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,0">Press [Enter] to start a new sum.</Label>
+
+                </StackPanel>
+                <StackPanel Width="640" Orientation="Vertical" >
+                                        <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,10,0,10">You can resize or move Alt1 as seen below.</Label>
+                    <Image Source="../Resources/Alt1_IntroResize.png" Width="275" Margin="0,0,0,5"/>
+                    <TextBlock FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" TextAlignment="Center" Margin="20,0,20,0" TextWrapping="WrapWithOverflow">To move the calcualtor to the default position, right click on the tray icon and select "Reset Location"</TextBlock>
+                    <!--<Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,5" Content="*Seperate average values by spaces eg. avg(130.5 65.2 300.5)"></Label>-->
+                    
+
+                </StackPanel>
+            
+
+            <StackPanel Width="650" Orientation="Vertical" >
+                <Label  FontSize="35" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,0" >Operators</Label>
+
+                <Image Source="Resources/HistoryShow1.png" Width="500" Margin="0,-10,0,0"/>
+
+                <TextBlock  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="WrapWithOverflow" Margin="20,-5,20,0">Alt1 is filled with mathematical operators like sin, cos, sqaure roots and you can even do averages!</TextBlock>
+                    <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,0">You only need to press one or two keys to access any operator. eg:</Label>
+                    <Label  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,5,0,0">[s] for sin() - [r] for sqaure root - [a][n] for Ans</Label>
+                    <Image Source="../Resources/Alt1_IntroOperators.png" Width="300" Margin="0,10,0,0"/>
+                </StackPanel>
+                <StackPanel Width="650" Orientation="Vertical" >
+                    <Label  FontSize="35" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,0" Content="History" />
+
+                    <TextBlock  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="20,0,20,0" TextWrapping="WrapWithOverflow" TextAlignment="Center"><Run Text="You can use previous answers in your equations. Pressing +,×,-,/ automatically adds &quot;Ans&quot;. To access any other history, simply click on it."/></TextBlock>
+                    <Image Source="../Resources/Alt1_IntroHistory.png" Width="250" Margin="0,10,0,0"/>
+                    <TextBlock  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="20,0,20,0" TextWrapping="WrapWithOverflow" TextAlignment="Center"><Run Text="Previous equations can be edited using the [Up]/[Down] arrow keys. You can also copy answers or equations by right clicking."/></TextBlock>
+
+                </StackPanel>
+
+                <StackPanel Width="650" Orientation="Vertical" >
+                    <Label  FontSize="35" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,10,0,5" >Thank you!</Label>
+
+                    <Label Panel.ZIndex="1" FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="0,0,0,5" Content="We hope that you will love Alt1 as much as we do."></Label>
+
+                    <TextBlock  FontSize="20" FontFamily="Segoe UI Light" HorizontalAlignment="Center" Margin="20,5,20,0" TextWrapping="WrapWithOverflow" TextAlignment="Center">We have a keyboard layout which shows how to access all the functions.  Take a minute to look over it but it can always be accessed later.</TextBlock>
+                    <Image Source="../Resources/Alt1_IntroHelp.png" Width="250" Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <Grid Margin="20,0,20,15" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnBack" Content="Skip this intro" Padding="8,3,8,3" Width="Auto" Grid.Column="0" Click="Button_Click_1" Background="#FF77BAFF" Foreground="white" FontWeight="SemiBold"/>
+                <Button Name="btnNext" Click="Button_Click" Content="Next" Width="Auto" Padding="15,3,15,3" Grid.Column="2" Background="#FF77BAFF" Foreground="white" FontWeight="SemiBold"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

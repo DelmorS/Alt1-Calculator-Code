@@ -1,0 +1,30 @@
+﻿<Window x:Class="Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alt1"
+        mc:Ignorable="d"
+        Title="Help" Height="647.2" Width="1350" ResizeMode="NoResize">
+    <StackPanel>
+
+        <Label  FontSize="24" FontFamily="Segoe UI" HorizontalAlignment="Center" Margin="0,-5,0,0">Calculator Key Positions</Label>
+        <Border BorderBrush="Black" BorderThickness="1" Width="1280">
+            <Image Source="../Resources/Alt1_KeyboardLayout.png" Width="1275" Margin="0,0,0,0" RenderOptions.EdgeMode="Aliased"/>
+        </Border>
+
+        <Label  FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="20,5,0,0">avg() - Takes the average of numbers, seperate each by a space: avg(4 3 6) = 4.33333</Label>
+        <Label  FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="20,0,0,0">√()  - Default is sqaure root. For other roots put the number at the front (3 -> cube root): 3√(2) = 1.2599</Label>
+        <Label  FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="20,0,0,0">sin()/cos() - Switch between radians and degrees by right clicking the tray icon.</Label>
+                
+        <Grid Margin="20,0,20,15" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="left" Margin="0,0,0,0">Ans - Refers to the previous result. Other answers (Ans[2], [3], etc) can be used by clicking on them in the history.</Label>
+            <Button Name="btnNext" Click="btnNext_Click" Content="Watch Introduction" Width="Auto" Padding="15,3,15,3" Grid.Column="1" Margin="0,5,0,5" Background="#FF77BAFF" Foreground="white" FontWeight="SemiBold"/>
+        </Grid>
+
+    </StackPanel>
+</Window>
